@@ -31,6 +31,7 @@ import gc
 import controller
 from DISClib.ADT import list as lt
 assert cf
+import threading
 
 """
 La vista se encarga de la interacción con el usuario
@@ -260,7 +261,10 @@ def menu_cycle():
     sys.exit(0)
 
 
-# main del ejercicio
+# main del ejerciciox   
 if __name__ == "__main__":
     # TODO modificar main para reserar memoria (parte 2)
+    threading.stack_size(67108864*2)
+    sys.setrecursionlimit(default_limit*1000000)
+    thread=threading.Thread(target=menu_cycle)
     menu_cycle()
