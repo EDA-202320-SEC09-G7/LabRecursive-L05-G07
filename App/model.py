@@ -293,6 +293,8 @@ def findBookbyISBN(catalog, bookisbn, recursive=True):
         dict: el resultado de la busqueda, None si no se encuentra
         el libro
     """
+    
+    
     # TODO implementar la mascara para la busqueda binaria (parte 2)
     if recursive:
         book = recursiveSearchBookByISBN(catalog["books"],bookisbn)
