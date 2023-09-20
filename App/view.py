@@ -201,7 +201,7 @@ def menu_cycle():
             printSortResults(shuffled_list)
 
         elif int(inputs) == 7:
-            # TODO modificar opcion 7 del menu (parte 2)
+            # TODO modificar opcion 7 del menu
             isbn = input("Ingrese el ISBN del libro a buscar: ")
             isbn = int(isbn)
             result = controller.findBookByISBN(control,isbn,recursive=rec)

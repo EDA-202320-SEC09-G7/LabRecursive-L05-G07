@@ -195,7 +195,7 @@ def findBookByISBN(control, isbn, recursive=True):
     """
     Busca un libro por su ISBN
     """
-    # inicializa el tiempo de procesamiento
+    # inicializa el tiempo de procesamiento.
     star_time = getTime()
     # ejecuta la busqueda en el modelo
     book = model.findBookbyISBN(control["model"],
