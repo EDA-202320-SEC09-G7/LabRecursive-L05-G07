@@ -296,8 +296,11 @@ def findBookbyISBN(catalog, bookisbn, recursive=True):
     
     
     # TODO implementar la mascara para la busqueda binaria (parte 2)
-    pass
-
+    if recursive:
+        book = recursiveSearchBookByISBN(catalog["books"],bookisbn)
+    elif not recursive:
+        book = iterativeSearchBookByISBN(catalog,bookisbn)
+    return book
 
 def averageBookRatings(catalog, recursive=True):
     """averageBookRatings Mascara para las funciones de calculo del
@@ -357,7 +360,7 @@ def recursiveSearchBookByISBN(catalog, bookisbn):
         lista de libros
     """
     # TODO implementar la mascara de la busqueda recursiva (parte 2)
-    pass
+    
 
 
 def searchBookByISBN(books, bookisbn, low, high):
@@ -375,7 +378,24 @@ def searchBookByISBN(books, bookisbn, low, high):
         int: indice del libro en la lista, -1 si no lo encuentra
     """
     # TODO implementar recursivamente binary search (parte 2)
-    pass
+    start = 1
+    end = lt.size(books)
+    
+    for i in lt.iterator(books):
+        print(i)
+    
+    while start <= end:
+        mid = start + (end - start) // 2
+        if books[mid] == bookisbn:
+            return mid
+        
+        elif books[mid] > bookisbn:
+            end = mid - 1
+        
+        else:
+            start = mid + 1
+    
+    return -1
 
 
 def iterativeSearchBookByISBN(catalog, bookid):
