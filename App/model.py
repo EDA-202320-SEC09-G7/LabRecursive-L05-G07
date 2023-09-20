@@ -293,6 +293,8 @@ def findBookbyISBN(catalog, bookisbn, recursive=True):
         dict: el resultado de la busqueda, None si no se encuentra
         el libro
     """
+    
+    
     # TODO implementar la mascara para la busqueda binaria (parte 2)
     pass
 
@@ -311,7 +313,15 @@ def averageBookRatings(catalog, recursive=True):
     """
     # TODO implementar la mascara para calcular el promedio (parte 2)
     #  si recursive es True, llama la funcion recursiva
-    pass
+    rating=0.0
+    if recursive:
+        rating = recursiveAvgBooksRating(catalog)
+    else:
+        rating = iterativeAvgBooksRating(catalog)
+    return rating
+        
+        
+        
 
 
 def filterBooksByRating(catalog, low, high, recursive=True):
